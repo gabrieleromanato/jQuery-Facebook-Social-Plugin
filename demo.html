@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Facebook Social plugin demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css" media="screen">
+	
+	#fb-share {
+		
+		padding: 0.2em;
+		background: darkblue;
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
+		border-radius: 6px;
+		
+		
+	}
+	
+	.like-btn {
+		
+		font: bold small sans-serif;
+		color: #fff;
+		text-decoration: none;
+		padding: 0.3em;
+		
+	}
+	
+	.activity {
+	
+	    display: block;
+	    border: none;
+	    overflow: hidden;
+	    width: 300px;
+	    height: 300px;
+	
+	}
+	
+</style>
+</head>
+
+<body>
+	
+<div id="test"></div>
+
+<p id="test2"></p>
+
+<div id="activity"></div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.facebook.social.js"></script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		
+		$('#test').FacebookSocial({
+			
+			type: 'like'
+			
+		});
+		
+		$('#test2').FacebookSocial({
+			
+			wrapper: '<span id="fb-share"></span>',
+			klass: 'like-btn',
+			text: 'F'
+			
+		});
+		
+		$('#activity').FacebookSocial({
+		
+		    url: 'http://onwebdev.blogspot.com/',
+		    transparency: 'true',
+		    klass: 'activity',
+		    type: 'activity'
+		
+		});
+		
+	});
+	
+</script>
+</body>
+</html>
+
